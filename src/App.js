@@ -1,24 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import theme from './theme';
 import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
-  componentDidMount() {
-    this.test = 'test';
-  }
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+const Root = styled.div``;
+/* background-color: ${props => props.theme.colors.blackcurrant}; */
+/* background-image: url(${background}); */
+const Header = styled.div`
+  text-align: center;
+  color: ${props => props.theme.colors.dandelion};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+`;
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Root>
+        <Header>
+          <img src={logo} alt="logo" />
+          <h2>Clever Monkey</h2>
+        </Header>
+      </Root>
+    </ThemeProvider>
+  );
 }
 
 export default App;
