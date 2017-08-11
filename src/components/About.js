@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from '../media';
+import linkedin from '../assets/linkedin.svg';
+import twitter from '../assets/twitter.svg';
+import github from '../assets/github.svg';
 
 const Root = styled.div`
   margin: 0 15%;
@@ -40,15 +43,17 @@ const Root = styled.div`
     }
   `};
 `;
-const Title = styled.h4`
+const Title = styled.div`
+  ${media.tablet`
+    float: left;
+  `};
+`;
+const TitleTxt = styled.h4`
   font-family: ${props => props.theme.fonts.title};
   color: ${props => props.theme.colors.white};
   font-size: 27px;
   font-weight: normal;
   margin: 0 0 10px 0;
-  ${media.tablet`
-    float: left;
-  `};
 `;
 
 const Description = styled.div`
@@ -73,10 +78,39 @@ const DescriptionTxt = styled.span`
    `};
 `;
 
+const Shared = styled.div`
+  margin-top: 30px;
+  ${media.desktop`
+    margin-top:0;
+  `};
+`;
+
 export default function About() {
   return (
     <Root>
-      <Title>À propos</Title>
+      <Title>
+        <TitleTxt>À propos</TitleTxt>
+        <Shared>
+          <a
+            href="https://www.linkedin.com/in/mickael-dumand-5b4a9098"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img src={linkedin} alt="linkedin" />
+          </a>
+          <a
+            href="https://twitter.com/MeKimak"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img src={twitter} alt="twitter" />
+          </a>
+          <a
+            href="https://github.com/kimak"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img src={github} alt="github" />
+          </a>
+        </Shared>
+      </Title>
       <Description>
         <DescriptionTxt>
           Mon nom est Mickael Dumand, aka « Kimak ». Je suis{' '}
