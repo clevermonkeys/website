@@ -40,9 +40,7 @@ const HeaderBg = styled.div`
   position: absolute;
   height: 200px;
   width: 200%;
-  left: -50%;
-  bottom: -15%;
-  transform: rotateZ(-7deg);
+  transform: rotateZ(-5deg) translateX(-50%) translateY(100%);
   background-color: ${props => props.theme.colors.blackcurrant};
 `;
 
