@@ -4,10 +4,40 @@ import media from '../media';
 
 const Root = styled.div`
   margin: 0 15%;
+  ${media.mobile`   
+   &:before {
+      content:"";
+      display: table;
+      border: solid 1px ${props => props.theme.colors.dandelion};
+      width: 110px;
+      position: absolute;
+      margin-top: 40px;
+    }
+  `};
+  ${media.tablet`   
+   &:before {
+      content:"";
+      display: table;
+      border: solid 1px ${props => props.theme.colors.dandelion};
+      width: 110px;
+      position: absolute;
+      margin-top: 50px;
+    }
+  `};
   ${media.desktop`
+    position: relative;
     padding-left: 47%;
     margin: 0;
     transform: translateX(-100px);
+    &:before {
+      content:"";
+      display: table;
+      border: solid 1px ${props => props.theme.colors.dandelion};
+      width: 200px;
+      position: absolute;
+      margin-left: -220px;
+      margin-top: 100px;
+    }
   `};
 `;
 const Title = styled.h4`
